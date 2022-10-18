@@ -3,15 +3,22 @@ using System.Xml.Schema;
 
 namespace Lab3
 {
+    /// <summary>
+    /// a demonstration of the differences between arrays and lists
+    /// </summary>
     public class Lab3Driver
     {
         private static double[] grades;
         public static List<double> gradeList;
+        /// <summary>
+        /// the main method
+        /// </summary>
+        /// <param name="args">not utilized here</param>
         public static void Main(String[] args)
         {
             Console.WriteLine("Welcome to Lab 3: Arrays and Lists\n" +
-                "Would you like to make an array or a list? (Enter a number to choose.)" +
-                "\t1)\tAn Array" +
+                "Would you like to make an array or a list? (Enter a number to choose.)\n" +
+                "\t1)\tAn Array\n" +
                 "\t2)\tA List");
             int choice = int.Parse(Console.ReadLine());
 
@@ -31,6 +38,9 @@ namespace Lab3
             }
         }
 
+        /// <summary>
+        /// the version of the program which runs when the user selects "array"
+        /// </summary>
         private static void ArrayVersion()
         {
             //request user input and create new array of the length specified
@@ -72,6 +82,9 @@ namespace Lab3
             OutputGrades();
         }
 
+        /// <summary>
+        /// the version of the program which is run when the user chooses "list"
+        /// </summary>
         private static void ListVersion()
         {
             gradeList = new List<double>();
@@ -114,6 +127,9 @@ namespace Lab3
             OutputGradeList();
         }
 
+        /// <summary>
+        /// saves grades input by the user to the array
+        /// </summary>
         private static void InputGrades()
         {
             for (int i = 0; i < grades.Length; i++)
@@ -125,6 +141,12 @@ namespace Lab3
             }
         }
 
+        //ARRAY METHODS
+
+        /// <summary>
+        /// same as above, but allows starting from an index besides the first one
+        /// </summary>
+        /// <param name="startIndex">the index that you start saving from</param>
         private static void InputGrades(int startIndex)
         {
             for (int i = startIndex; i < grades.Length; i++)
@@ -136,6 +158,9 @@ namespace Lab3
             }
         }
 
+        /// <summary>
+        /// displays the array
+        /// </summary>
         private static void OutputGrades()
         {
             foreach (double grade in grades)
@@ -144,6 +169,11 @@ namespace Lab3
             }
         }
 
+        /// <summary>
+        /// makes a deep copy of the array of grades
+        /// </summary>
+        /// <param name="size">how big to make the new array</param>
+        /// <returns>the copy array</returns>
         private static double[] CopyArray(int size)
         {
             double[] tempName = new double[size];
@@ -154,6 +184,12 @@ namespace Lab3
             return tempName;
         }
 
+        //LIST METHODS
+
+        /// <summary>
+        /// provides user with various options to interact with the list
+        /// </summary>
+        /// <returns>user's input</returns>
         private static int ListMenu()
         {
             Console.WriteLine(
@@ -164,6 +200,9 @@ namespace Lab3
             return int.Parse(Console.ReadLine());
         }
 
+        /// <summary>
+        /// displays the list
+        /// </summary>
         private static void OutputGradeList()
         {
             Console.WriteLine("Displaying grades:");
