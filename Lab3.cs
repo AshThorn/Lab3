@@ -1,4 +1,14 @@
-﻿using System;
+﻿//////////////////////////////////////////////////////////////////////////////
+/// Project:        Lab3
+/// File Name:      Lab3
+/// Description:    array and list demonstration
+/// Course:         CSCI 1260
+/// Author:         Ash North
+/// Created:        2022-10-17
+/// Copyright:      Ash North, 2022
+//////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Xml.Schema;
 
 namespace Lab3
